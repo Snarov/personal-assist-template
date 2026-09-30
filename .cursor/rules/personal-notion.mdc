@@ -1,0 +1,14 @@
+---
+description: Use only the personal Notion workspace. Never the work Notion.
+alwaysApply: true
+---
+
+# Personal Notion only
+
+This project talks to a **personal** Notion account and workspace.
+
+Never use a workspace listed in `catalog.json` → `notion.forbiddenWorkspaces`. Never use the Cursor MCP server named `notion` / `user-notion`.
+
+Use only the project MCP server `notion-personal` after it is connected to the personal account.
+
+If `notion-personal` is missing, unauthenticated, or still bound to the work workspace, stop. Do not create, update, or query pages in the work workspace as a fallback.

@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+telegram-relay/relay.env
+telegram-relay/state.json
+*.pem
+*.key
+.DS_Store
+node_modules/
+__pycache__/
+*.pyc

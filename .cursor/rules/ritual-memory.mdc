@@ -1,0 +1,40 @@
+---
+description: Missed morning/evening rituals and daily MD logs the next check-in must use
+alwaysApply: true
+---
+
+# Ritual memory
+
+Before `morning-checkin`, `evening-review`, or `telegram-feedback`: read this miss list and `ritual/YYYY-MM-DD.md` for the last 7 Mon–Sat days.
+
+Journal starts at `catalog.json` → `ritual.journalStart`. Do not mark earlier days missed. Sunday is not a slot.
+
+## Сейчас пропущено
+
+
+## Rules
+
+- Every slot lives in `ritual/YYYY-MM-DD.md` (утро + вечер). Status: `sent` | `answered` | `skipped` | `missed`.
+- After send, reply, skip, or a stale `sent`, update the day file **and** this list.
+- A day had a focus only when утро is `answered` and `Фокус` names tasks. «сегодня ничего», «отдыхаем», «отдыхаю», and `Фокус: —` are no focus.
+- An open miss is a slot he still needs to close. The next Telegram names only these, one line, and asks for a recap or «пропустил».
+- Stale `sent` morning → `missed`, add `- YYYY-MM-DD утро — …` here. An unanswered morning is not a day off.
+- Stale `sent` evening on a focus day → `missed`, add `- YYYY-MM-DD вечер — …` here. That is the miss to mention.
+- Stale `sent` evening on a no-focus day → `skipped` (выходной). Do not add it here. If it is already `missed` and listed, close it the same way and remove the line. Do not ask.
+- A diary voice, a day rating, routine notes, a study report, a free note, or «день нормальный» do not close a focus-day evening. Close it (`answered`) only when he gives per-task minutes or an explicit result on those focus tasks (сделал / не делал / готово / по фокусу ничего). Until then leave `sent`.
+- «Пропустил» / не писал → `skipped`, remove from this list. «сегодня ничего» is an answered morning, not a miss.
+- Next Telegram: one short line about open misses, ask to close them or continue today. Do not invent what happened. Do not shame.
+- Only open misses stay here (max 7 days). Closed ones remain in the MD file only.
+- Morning `Пора:` is the nudge list from `.cursor/rules/task-nudges.mdc`. It does not close the morning and is not a miss. Keep the line when the day file is updated.
+
+## Git
+
+After send, reply, skip, or a stale `sent` written into the day file:
+
+1. `git add ritual/ .cursor/rules/ritual-memory.mdc` — nothing else.
+2. `git commit` (`Record YYYY-MM-DD morning|evening …`).
+3. `git fetch origin master`.
+4. Land the commit on `master`: checkout `master`, merge this commit, or `git push origin HEAD:master` if the branch contains only that ritual commit.
+5. `git push origin master`.
+6. Do not wait for «ок». A feature-branch PR is extra, not a substitute. If the `master` push fails, say so in the same message.
+

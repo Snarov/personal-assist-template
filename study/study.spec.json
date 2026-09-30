@@ -1,0 +1,355 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "study/study.spec.json",
+  "id": "study",
+  "title": "Учёба в будни",
+  "version": "1.1.0",
+  "locale": "ru",
+  "timezone": "Europe/Moscow",
+  "purpose": "В понедельник–пятницу прибавлять 30 минут учёбы. Недобор переходит на следующий будний день. Суббота и воскресенье 30 минут не начисляют. В записи дня: что выучено, к какой цели и проекту это относится и в какую задачу уже внедрено или будет внедрено в ближайшее время.",
+  "storage": {
+    "spec": "study/study.spec.json",
+    "dayEntry": "study/entries/YYYY-MM-DD.json",
+    "notionPageUrl": "",
+    "notionDataSourceUrl": ""
+  },
+  "topics": {
+    "file": "study/topics.json",
+    "notionPageUrl": "",
+    "notionDataSourceUrl": "",
+    "shape": "Та же база «Учёба». Плоский список. Одна карточка — одна тема или одно упражнение. Свойство только «Тема». Без приоритета, родителя, горизонта, проекта, цели, минут и даты. Порядок — порядок записи. На карточке всё, что относится к обучению: слова, материалы и ссылки. Отдельной базы нет."
+  },
+  "targetMinutes": 30,
+  "accrueFrom": "",
+  "accrualDays": [
+    "пн",
+    "вт",
+    "ср",
+    "чт",
+    "пт"
+  ],
+  "workingDays": [
+    "пн",
+    "вт",
+    "ср",
+    "чт",
+    "пт"
+  ],
+  "agentRules": [
+    "Норма дня = перешедший недобор + 30 в понедельник–пятницу. Суббота и воскресенье +0 и не спрашиваются. Минуты сверх нормы в кредит не уходят: остаток 0, следующий будний день снова 30.",
+    "Будний день, который уже кончился, входит в долг: записанные минуты вычитаются, нет целых минут — как 0. Файл «не учился» из молчания в тот же вечер не создавать. Суббота и воскресенье 30 не добавляют. Дни раньше accrueFrom в долг не брать и не переписывать.",
+    "Субботу и воскресенье не спрашивать. Если он сам рассказал, что учился, записать и вычесть минуты из долга.",
+    "Не выдумывать минуты, тему, цель, проект, задачу, срок внедрения и зачем.",
+    "Тема или упражнение учёбы — карточка в «Учёбе», не строка Задач и не вторая база. Свойство только «Тема». Не спрашивать проект, родителя, горизонт и приоритет. Группировку не строить, пока он сам не попросит. На карточке — его слова, материалы и ссылки.",
+    "Молчание — это не «не учился». Файл не создавать, пока он не ответил.",
+    "Цель только из catalog.json → board.goals. Проект и задачу брать из живого Notion. Не создавать проект. Задачу создавать только когда он назвал название и попросил завести.",
+    "Одна тема с одним общим временем — одна запись. Не дробить время, которого он не назвал.",
+    "Карточка в Notion — тема в «Учёбе». Отчёт дня живёт в git и отдельной строкой не становится. День без учёбы — только git.",
+    "Не копировать учёбу в комментарий задачи, в свободные заметки, в дневник и в рабочую рутину."
+  ],
+  "schema": {
+    "$anchor": "StudyDayEntry",
+    "$defs": {
+      "weekday": {
+        "type": "string",
+        "enum": [
+          "пн",
+          "вт",
+          "ср",
+          "чт",
+          "пт",
+          "сб",
+          "вс"
+        ]
+      },
+      "taskLink": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "pageUrl"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "pageUrl": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "item": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "what",
+          "minutes",
+          "goal",
+          "goalPageUrl",
+          "project",
+          "projectPageUrl",
+          "tasks",
+          "tasksDeclined",
+          "application",
+          "applicationWhen",
+          "purpose",
+          "notionPageUrl"
+        ],
+        "properties": {
+          "what": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minutes": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "goal": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "goalPageUrl": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "project": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "projectPageUrl": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/taskLink"
+            }
+          },
+          "tasksDeclined": {
+            "type": "boolean"
+          },
+          "application": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "applicationWhen": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "implemented",
+              "willImplement",
+              null
+            ]
+          },
+          "purpose": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "notionPageUrl": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "spec",
+      "specVersion",
+      "date",
+      "weekday",
+      "status",
+      "targetMinutes",
+      "metTarget",
+      "totalMinutes",
+      "items",
+      "source"
+    ],
+    "properties": {
+      "spec": {
+        "const": "study"
+      },
+      "specVersion": {
+        "enum": [
+          "1.0.0",
+          "1.1.0"
+        ]
+      },
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "weekday": {
+        "$ref": "#/$defs/weekday"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "none",
+          "partial",
+          "complete"
+        ]
+      },
+      "accruedMinutes": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "carryIn": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "dueMinutes": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "targetMinutes": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "carryOut": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0
+      },
+      "metTarget": {
+        "type": [
+          "boolean",
+          "null"
+        ]
+      },
+      "totalMinutes": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 0
+      },
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/item"
+        }
+      },
+      "source": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "status": {
+              "const": "none"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "items": {
+              "maxItems": 0
+            },
+            "totalMinutes": {
+              "const": 0
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "status": {
+              "const": "complete"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "items": {
+              "minItems": 1
+            },
+            "totalMinutes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "metTarget": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "specVersion": {
+              "const": "1.1.0"
+            }
+          },
+          "required": [
+            "specVersion"
+          ]
+        },
+        "then": {
+          "required": [
+            "accruedMinutes",
+            "carryIn",
+            "dueMinutes",
+            "carryOut"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "specVersion": {
+              "const": "1.0.0"
+            }
+          },
+          "required": [
+            "specVersion"
+          ]
+        },
+        "then": {
+          "properties": {
+            "accruedMinutes": false,
+            "carryIn": false,
+            "dueMinutes": false,
+            "carryOut": false
+          }
+        }
+      }
+    ]
+  }
+}

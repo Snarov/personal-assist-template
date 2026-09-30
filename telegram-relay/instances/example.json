@@ -1,0 +1,20 @@
+{
+  "telegram": {
+    "relayUrl": "",
+    "allowedChatId": ""
+  },
+  "deploy": {
+    "host": "",
+    "installDir": "",
+    "stateDir": "",
+    "unit": "",
+    "bind": "127.0.0.1",
+    "port": 0,
+    "hermesEnv": "",
+    "cursorEnvName": "",
+    "nginxSite": "",
+    "nginxLocation": "",
+    "nginxInsertBefore": "",
+    "python": ""
+  }
+}

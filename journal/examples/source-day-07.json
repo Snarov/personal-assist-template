@@ -1,0 +1,37 @@
+{
+  "spec": "life-control",
+  "specVersion": "1.1.0",
+  "date": "2002-01-07",
+  "weekday": "пн",
+  "status": "complete",
+  "notes": null,
+  "tag": "запуск",
+  "oneOffSubstances": null,
+  "effectiveness": 8,
+  "work": 3,
+  "mood": 3,
+  "training": 1,
+  "social": {
+    "happened": true,
+    "great": false
+  },
+  "sleep": {
+    "hours": 7,
+    "quality": "ok"
+  },
+  "intakes": [
+    { "id": "prl", "value": 1.25, "unit": "mg" },
+    { "id": "lio", "value": 4, "unit": "g" },
+    { "id": "drink", "value": "ко" },
+    { "id": "life", "value": 2, "unit": "serving" },
+    { "id": "ash", "value": 0.75, "unit": "g" },
+    {
+      "id": "fbgab",
+      "value": 250,
+      "unit": "mg",
+      "name": "фенибут",
+      "note": "имя по типичной дозе из комментария автора, в ячейке только число"
+    }
+  ],
+  "source": "public-template-sample"
+}

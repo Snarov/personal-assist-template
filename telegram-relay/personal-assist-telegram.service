@@ -1,0 +1,18 @@
+[Unit]
+# Example only. deploy.sh writes the live unit from catalog.json and does not copy this file.
+Description=Personal Assist Telegram relay
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/personal-assist/telegram-relay
+EnvironmentFile=/opt/personal-assist/telegram-relay/relay.env
+ExecStart=/usr/bin/python3 /opt/personal-assist/telegram-relay/relay.py
+Restart=always
+RestartSec=3
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target

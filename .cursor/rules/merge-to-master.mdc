@@ -1,0 +1,84 @@
+---
+description: Operational journals go to master immediately; other work merges on the owner's confirmation
+alwaysApply: true
+---
+
+# Merge to master
+
+This repo is Personal OS, not a product. The next Cloud run reads `master`.
+
+## Ritual (утро, вечер, ответ в Telegram)
+
+Journal updates land on `master` in the same run. Do not wait for «ок». Do not leave them only on a PR.
+
+1. Commit **only** `ritual/` and `.cursor/rules/ritual-memory.mdc`.
+2. `git fetch origin master`.
+3. Put that commit on `master` (`git checkout master` + merge the ritual commit, or `git push origin HEAD:master` when the branch has nothing else).
+4. `git push origin master`.
+5. If the `master` push fails, say so in the same message. A feature-branch PR is not a substitute.
+
+Do not mix catalog, skills, or Notion-layout edits into that ritual commit.
+
+## Life journal (day entry or profile he confirmed)
+
+Same as ritual: the next run reads `master`. Do not wait for «ок».
+
+1. Commit **only** `journal/entries/`, `journal/months/`, and/or `journal/profile.json`.
+2. `git fetch origin master`.
+3. Land that commit on `master` and `git push origin master`.
+4. If the same run also wrote a ritual slot, make a **second** commit. Do not mix `ritual/` and `journal/` in one commit.
+5. If the `master` push fails, say so. A PR is not a substitute.
+
+Do not put skill, spec, or catalog edits in that journal commit.
+
+## Work routine (confirmed day entry)
+
+Same as ritual: the next run reads `master`. Do not wait for «ок».
+
+1. Commit **only** `routine/entries/`.
+2. `git fetch origin master`.
+3. Land that commit on `master` and `git push origin master`.
+4. If the same run also wrote a ritual slot or life-journal entry, use a separate commit for each log.
+5. If the `master` push fails, say so. A PR is not a substitute.
+
+Do not put skill, spec, catalog, or README edits in that routine-entry commit.
+
+## Study (confirmed day entry)
+
+Same as ritual: the next run reads `master`. Do not wait for «ок».
+
+1. Commit **only** `study/entries/`.
+2. `git fetch origin master`.
+3. Land that commit on `master` and `git push origin master`.
+4. If the same run also wrote a ritual slot, a life-journal entry, a routine entry, or a free note, use a separate commit for each log.
+5. If the `master` push fails, say so. A PR is not a substitute.
+
+Do not put skill, spec, catalog, or README edits in that study-entry commit.
+
+## Study topics (a topic he named)
+
+Same as a study day: the next run reads `master`. Do not wait for «ок».
+
+1. Commit **only** `study/topics.json`.
+2. `git fetch origin master`.
+3. Land that commit on `master` and `git push origin master`.
+4. If the same run also wrote a day entry, a ritual slot, or another log, use a separate commit for each.
+5. If the `master` push fails, say so. A PR is not a substitute.
+
+Do not put skill, spec, catalog, or README edits in that topic commit.
+
+## Free notes (a thought he told)
+
+Same as ritual: the next run reads `master`. Do not wait for «ок».
+
+1. Commit **only** `notes/entries/`.
+2. `git fetch origin master`.
+3. Land that commit on `master` and `git push origin master`.
+4. If the same run also wrote a ritual slot, a life-journal entry, or a routine entry, use a separate commit for each log.
+5. If the `master` push fails, say so. A PR is not a substitute.
+
+Do not put skill, spec, catalog, or README edits in that note commit.
+
+## Other work
+
+When the owner confirms («ок», «подтверждаю», «заливай», «вливай»), merge that work into `master` yourself. Do not ask him to merge a PR.

@@ -1,0 +1,646 @@
+{
+  "note": "Строки 1–11 из публичного шаблона. Дата 2002-01 (месяц с вт) только чтобы получить ISO. Не данные владельца. Имена Fb|GAB/Anx восстановлены из комментариев автора, в ячейках были числа.",
+  "days": [
+    {
+      "spec": "life-control",
+      "specVersion": "1.1.0",
+      "date": "2002-01-01",
+      "weekday": "вт",
+      "status": "complete",
+      "notes": null,
+      "tag": null,
+      "oneOffSubstances": null,
+      "effectiveness": 6.4,
+      "work": 1,
+      "mood": 1,
+      "training": 2,
+      "social": {
+        "happened": false,
+        "great": false
+      },
+      "sleep": {
+        "hours": 7,
+        "quality": "ok"
+      },
+      "intakes": [
+        {
+          "id": "lio",
+          "value": 2,
+          "unit": "g"
+        },
+        {
+          "id": "drink",
+          "value": "ко"
+        },
+        {
+          "id": "fen",
+          "value": 1,
+          "unit": "tab"
+        },
+        {
+          "id": "lty",
+          "value": 0.5,
+          "unit": "g"
+        },
+        {
+          "id": "caf",
+          "value": 50,
+          "unit": "mg"
+        },
+        {
+          "id": "ash",
+          "value": 0.75,
+          "unit": "g"
+        },
+        {
+          "id": "mem",
+          "value": 30,
+          "unit": "mg"
+        }
+      ],
+      "source": "public-template-sample"
+    },
+    {
+      "spec": "life-control",
+      "specVersion": "1.1.0",
+      "date": "2002-01-02",
+      "weekday": "ср",
+      "status": "complete",
+      "notes": null,
+      "tag": null,
+      "oneOffSubstances": null,
+      "effectiveness": 7,
+      "work": 2,
+      "mood": 1,
+      "training": null,
+      "social": {
+        "happened": true,
+        "great": false
+      },
+      "sleep": {
+        "hours": 6,
+        "quality": "ok"
+      },
+      "intakes": [
+        {
+          "id": "prl",
+          "value": 1.25,
+          "unit": "mg"
+        },
+        {
+          "id": "lio",
+          "value": 2,
+          "unit": "g"
+        },
+        {
+          "id": "drink",
+          "value": "ул"
+        },
+        {
+          "id": "fen",
+          "value": 2,
+          "unit": "tab"
+        },
+        {
+          "id": "lty",
+          "value": 1,
+          "unit": "g"
+        },
+        {
+          "id": "caf",
+          "value": 50,
+          "unit": "mg"
+        },
+        {
+          "id": "anx",
+          "value": 40,
+          "name": "корвалол",
+          "note": "40 капель — пример автора для числа 40"
+        }
+      ],
+      "source": "public-template-sample"
+    },
+    {
+      "spec": "life-control",
+      "specVersion": "1.1.0",
+      "date": "2002-01-03",
+      "weekday": "чт",
+      "status": "complete",
+      "notes": null,
+      "tag": null,
+      "oneOffSubstances": null,
+      "effectiveness": 6.7,
+      "work": 1,
+      "mood": 1,
+      "training": 1,
+      "social": {
+        "happened": true,
+        "great": false
+      },
+      "sleep": {
+        "hours": 6,
+        "quality": "ok"
+      },
+      "intakes": [
+        {
+          "id": "prl",
+          "value": 1.25,
+          "unit": "mg"
+        },
+        {
+          "id": "lio",
+          "value": 3,
+          "unit": "g"
+        },
+        {
+          "id": "drink",
+          "value": "ко"
+        },
+        {
+          "id": "fen",
+          "value": 1,
+          "unit": "tab"
+        },
+        {
+          "id": "lty",
+          "value": 0.5,
+          "unit": "g"
+        },
+        {
+          "id": "ash",
+          "value": 0.75,
+          "unit": "g"
+        }
+      ],
+      "source": "public-template-sample"
+    },
+    {
+      "spec": "life-control",
+      "specVersion": "1.1.0",
+      "date": "2002-01-04",
+      "weekday": "пт",
+      "status": "complete",
+      "notes": null,
+      "tag": null,
+      "oneOffSubstances": null,
+      "effectiveness": 7.2,
+      "work": 1,
+      "mood": 2,
+      "training": null,
+      "social": {
+        "happened": true,
+        "great": false
+      },
+      "sleep": {
+        "hours": 7,
+        "quality": "ok"
+      },
+      "intakes": [
+        {
+          "id": "prl",
+          "value": 1.25,
+          "unit": "mg"
+        },
+        {
+          "id": "lio",
+          "value": 3,
+          "unit": "g"
+        },
+        {
+          "id": "drink",
+          "value": "зе"
+        },
+        {
+          "id": "fen",
+          "value": 1,
+          "unit": "tab"
+        },
+        {
+          "id": "lty",
+          "value": 0.5,
+          "unit": "g"
+        },
+        {
+          "id": "caf",
+          "value": 50,
+          "unit": "mg"
+        },
+        {
+          "id": "ash",
+          "value": 0.75,
+          "unit": "g"
+        },
+        {
+          "id": "fbgab",
+          "value": 300,
+          "unit": "mg",
+          "name": "габапентин",
+          "note": "имя по типичной дозе из комментария автора, в ячейке только число"
+        }
+      ],
+      "source": "public-template-sample"
+    },
+    {
+      "spec": "life-control",
+      "specVersion": "1.1.0",
+      "date": "2002-01-05",
+      "weekday": "сб",
+      "status": "complete",
+      "notes": null,
+      "tag": null,
+      "oneOffSubstances": null,
+      "effectiveness": 7,
+      "work": null,
+      "mood": 2,
+      "training": null,
+      "social": {
+        "happened": false,
+        "great": false
+      },
+      "sleep": {
+        "hours": 6.5,
+        "quality": "ok"
+      },
+      "intakes": [
+        {
+          "id": "prl",
+          "value": 1.25,
+          "unit": "mg"
+        },
+        {
+          "id": "lio",
+          "value": 2,
+          "unit": "g"
+        },
+        {
+          "id": "fen",
+          "value": 1,
+          "unit": "tab"
+        },
+        {
+          "id": "life",
+          "value": 2,
+          "unit": "serving"
+        },
+        {
+          "id": "ash",
+          "value": 0.75,
+          "unit": "g"
+        },
+        {
+          "id": "alc",
+          "value": 25,
+          "unit": "g_ethanol"
+        }
+      ],
+      "source": "public-template-sample"
+    },
+    {
+      "spec": "life-control",
+      "specVersion": "1.1.0",
+      "date": "2002-01-06",
+      "weekday": "вс",
+      "status": "complete",
+      "notes": null,
+      "tag": null,
+      "oneOffSubstances": null,
+      "effectiveness": 6.5,
+      "work": null,
+      "mood": 2,
+      "training": null,
+      "social": {
+        "happened": false,
+        "great": false
+      },
+      "sleep": {
+        "hours": 7,
+        "quality": "ok"
+      },
+      "intakes": [
+        {
+          "id": "prl",
+          "value": 1.25,
+          "unit": "mg"
+        },
+        {
+          "id": "lio",
+          "value": 2,
+          "unit": "g"
+        },
+        {
+          "id": "drink",
+          "value": "че"
+        },
+        {
+          "id": "ash",
+          "value": 0.75,
+          "unit": "g"
+        },
+        {
+          "id": "anx",
+          "value": 12.5
+        }
+      ],
+      "source": "public-template-sample"
+    },
+    {
+      "spec": "life-control",
+      "specVersion": "1.1.0",
+      "date": "2002-01-07",
+      "weekday": "пн",
+      "status": "complete",
+      "notes": null,
+      "tag": "запуск",
+      "oneOffSubstances": null,
+      "effectiveness": 8,
+      "work": 3,
+      "mood": 3,
+      "training": 1,
+      "social": {
+        "happened": true,
+        "great": false
+      },
+      "sleep": {
+        "hours": 7,
+        "quality": "ok"
+      },
+      "intakes": [
+        {
+          "id": "prl",
+          "value": 1.25,
+          "unit": "mg"
+        },
+        {
+          "id": "lio",
+          "value": 4,
+          "unit": "g"
+        },
+        {
+          "id": "drink",
+          "value": "ко"
+        },
+        {
+          "id": "life",
+          "value": 2,
+          "unit": "serving"
+        },
+        {
+          "id": "ash",
+          "value": 0.75,
+          "unit": "g"
+        },
+        {
+          "id": "fbgab",
+          "value": 250,
+          "unit": "mg",
+          "name": "фенибут",
+          "note": "имя по типичной дозе из комментария автора, в ячейке только число"
+        }
+      ],
+      "source": "public-template-sample"
+    },
+    {
+      "spec": "life-control",
+      "specVersion": "1.1.0",
+      "date": "2002-01-08",
+      "weekday": "вт",
+      "status": "complete",
+      "notes": null,
+      "tag": null,
+      "oneOffSubstances": null,
+      "effectiveness": 6.9,
+      "work": 2,
+      "mood": 1,
+      "training": 1,
+      "social": {
+        "happened": true,
+        "great": true
+      },
+      "sleep": {
+        "hours": 7,
+        "quality": "ok"
+      },
+      "intakes": [
+        {
+          "id": "prl",
+          "value": 1.25,
+          "unit": "mg"
+        },
+        {
+          "id": "lio",
+          "value": 4,
+          "unit": "g"
+        },
+        {
+          "id": "drink",
+          "value": "ко"
+        },
+        {
+          "id": "fen",
+          "value": 1,
+          "unit": "tab"
+        },
+        {
+          "id": "lty",
+          "value": 0.5,
+          "unit": "g"
+        },
+        {
+          "id": "caf",
+          "value": 100,
+          "unit": "mg"
+        },
+        {
+          "id": "ash",
+          "value": 0.75,
+          "unit": "g"
+        }
+      ],
+      "source": "public-template-sample"
+    },
+    {
+      "spec": "life-control",
+      "specVersion": "1.1.0",
+      "date": "2002-01-09",
+      "weekday": "ср",
+      "status": "complete",
+      "notes": null,
+      "tag": null,
+      "oneOffSubstances": null,
+      "effectiveness": 6.5,
+      "work": 2,
+      "mood": null,
+      "training": null,
+      "social": {
+        "happened": false,
+        "great": false
+      },
+      "sleep": {
+        "hours": 8,
+        "quality": "ok"
+      },
+      "intakes": [
+        {
+          "id": "prl",
+          "value": 1.25,
+          "unit": "mg"
+        },
+        {
+          "id": "lio",
+          "value": 4,
+          "unit": "g"
+        },
+        {
+          "id": "drink",
+          "value": "ул"
+        },
+        {
+          "id": "fen",
+          "value": 2,
+          "unit": "tab"
+        },
+        {
+          "id": "lty",
+          "value": 0.5,
+          "unit": "g"
+        },
+        {
+          "id": "caf",
+          "value": 50,
+          "unit": "mg"
+        },
+        {
+          "id": "alc",
+          "value": 25,
+          "unit": "g_ethanol"
+        }
+      ],
+      "source": "public-template-sample"
+    },
+    {
+      "spec": "life-control",
+      "specVersion": "1.1.0",
+      "date": "2002-01-10",
+      "weekday": "чт",
+      "status": "complete",
+      "notes": null,
+      "tag": null,
+      "oneOffSubstances": null,
+      "effectiveness": 6.6,
+      "work": 2,
+      "mood": 1,
+      "training": 1,
+      "social": {
+        "happened": true,
+        "great": true
+      },
+      "sleep": {
+        "hours": 6.5,
+        "quality": "ok"
+      },
+      "intakes": [
+        {
+          "id": "prl",
+          "value": 1.25,
+          "unit": "mg"
+        },
+        {
+          "id": "lio",
+          "value": 4,
+          "unit": "g"
+        },
+        {
+          "id": "drink",
+          "value": "ко"
+        },
+        {
+          "id": "fen",
+          "value": 1,
+          "unit": "tab"
+        },
+        {
+          "id": "lty",
+          "value": 0.5,
+          "unit": "g"
+        },
+        {
+          "id": "caf",
+          "value": 50,
+          "unit": "mg"
+        }
+      ],
+      "source": "public-template-sample"
+    },
+    {
+      "spec": "life-control",
+      "specVersion": "1.1.0",
+      "date": "2002-01-11",
+      "weekday": "пт",
+      "status": "complete",
+      "notes": null,
+      "tag": null,
+      "oneOffSubstances": null,
+      "effectiveness": 6.8,
+      "work": 1,
+      "mood": 2,
+      "training": 1,
+      "social": {
+        "happened": true,
+        "great": false
+      },
+      "sleep": {
+        "hours": 7.5,
+        "quality": "ok"
+      },
+      "intakes": [
+        {
+          "id": "prl",
+          "value": 1.25,
+          "unit": "mg"
+        },
+        {
+          "id": "lio",
+          "value": 1,
+          "unit": "g"
+        },
+        {
+          "id": "drink",
+          "value": "ко"
+        },
+        {
+          "id": "fen",
+          "value": 1,
+          "unit": "tab"
+        },
+        {
+          "id": "lty",
+          "value": 0.5,
+          "unit": "g"
+        },
+        {
+          "id": "caf",
+          "value": 50,
+          "unit": "mg"
+        },
+        {
+          "id": "ash",
+          "value": 0.75,
+          "unit": "g"
+        },
+        {
+          "id": "fbgab",
+          "value": 300,
+          "unit": "mg",
+          "name": "габапентин",
+          "note": "имя по типичной дозе из комментария автора, в ячейке только число"
+        },
+        {
+          "id": "mem",
+          "value": 15,
+          "unit": "mg"
+        }
+      ],
+      "source": "public-template-sample"
+    }
+  ]
+}

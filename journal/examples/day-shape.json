@@ -1,0 +1,64 @@
+{
+  "spec": "life-control",
+  "specVersion": "1.7.0",
+  "date": "2026-09-21",
+  "weekday": "пн",
+  "status": "complete",
+  "effectiveness": 6,
+  "work": 2,
+  "mood": {
+    "morning": 1,
+    "evening": 2
+  },
+  "training": 0,
+  "social": {
+    "happened": false
+  },
+  "sleep": {
+    "bedtime": "23:30",
+    "wake": "06:30",
+    "hours": 7,
+    "quality": 6,
+    "lastComputerAt": "21:40"
+  },
+  "energy": {
+    "morning": 5,
+    "evening": 4
+  },
+  "meditation": {
+    "minutes": 15
+  },
+  "attitudesRead": true,
+  "media": {
+    "minutes": 40,
+    "what": "подкаст про сон, глава «Дюны»"
+  },
+  "nutrition": {
+    "what": "овсянка, курица с рисом, творог",
+    "balance": "deficit",
+    "hungry": true,
+    "lastMealAt": "18:30",
+    "within4hOfSleep": false
+  },
+  "custom": {
+    "exercise": "quick"
+  },
+  "intakes": [
+    {
+      "id": "drink",
+      "value": 2,
+      "unit": "espresso_cup"
+    }
+  ],
+  "oneOffSubstances": ["витамин D", "сигареты"],
+  "comments": {
+    "sleep": "долго засыпал",
+    "lastMeal": "ужин дома",
+    "energyMorning": "после душа чуть лучше",
+    "moodMorning": "сонный, но ровный",
+    "meditation": "только утром",
+    "effectiveness": "день рваный"
+  },
+  "notes": "Общая заметка о дне, не комментарий к пункту.",
+  "source": "shape-example"
+}

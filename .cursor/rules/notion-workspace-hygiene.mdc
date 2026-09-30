@@ -1,0 +1,64 @@
+---
+description: What "delete", "project", and "this month" mean in the owner's personal Notion, and how to prove a change landed
+alwaysApply: true
+---
+
+# Notion workspace hygiene
+
+Learned the hard way on 2026-09-13 (see `.cursor/skills/notion-cleanup/SKILL.md`, section «Postmortem»).
+
+## "Delete" means gone from the database
+
+- `Статус=Cancelled`, `Статус=Done`, or unlinking from Цели is **not** deletion. The row stays in Проекты and keeps showing in Goals → Проекты and every view.
+- `notion-update-page` with `in_trash: true` is **silently ignored** by the MCP. It returns success and does nothing. Never report deletion based on that call.
+- The only working path: `notion-move-pages` the row out of the database into the scratch page «Не проекты» (`catalog.json` → `notion.scratchBinPageUrl`), then rewrite that page's content with `allow_deleting_content: true` so the moved children are deleted. Procedure in the skill.
+- View filters hiding `Cancelled` are a safety net, not a substitute. Delete first, filter second.
+
+## Verify by reading the list, not the page
+
+After any delete / move / merge, re-fetch the **database view or data source** and the **parent goal page**, and confirm the title is absent. Do not say «удалил» until that read comes back clean. A successful write response is not proof.
+
+## What is a project
+
+- Goals are exactly the names in `catalog.json` → `board.goals`. A new Цели row needs an explicit `Приоритет` (`Максимальный`, `Высокий`, `Средний`, or `Низкий`) in the same message. `Максимальный` is above `Высокий`. Do not invent it. See `.cursor/rules/priorities.mdc`.
+- A project is a multi-task effort that hangs under a goal and will outlive this month. The cards are `catalog.json` → `board.projects`. A project with `parent` is a child of that project via `Родительский проект`, not a second copy of the same work. A row in `board.paused` stays paused until its `until`; morning does not offer it or its tasks. Household work toward that goal is the project whose `role` is `household`.
+- A single deliverable (a device, a card, a resume, a sub-feature) is a **task** inside a project, or a child task via `Родительская задача`. Do not create a project wrapper for it, and do not promote a child task into a standalone monthly item.
+- Before creating a task, follow `.cursor/skills/create-task/SKILL.md`. The row waits until he has named the project, the parent task or «без родителя», the horizon, and the priority (`Максимальный`, `Высокий`, `Средний`, or `Низкий`). If he delegates project, parent, or horizon, the skill determines those and says what was set. Priority is still his word, unless he delegated and the parent already has a level. Do not write a Задачи row from this rule alone. Related cards of one arc still share a parent: that pass is `.cursor/rules/task-relations.mdc`, and it proposes the parent inside `create-task`.
+- A study topic or exercise is not a Задачи row, not a project, and not the day's focus. `study-log` writes one flat card in «Учёба»: title only. There is no second database «Темы учёбы». The card body holds the learning, materials, and links. No priority, parent, horizon, project, or goal. Do not run `create-task` for it. Do not put it on `Фокус сегодня` or into the day's «Фокус» `План`, `Итог`, `Корректировка`, `Порядок фокуса`, or `Задачи`.
+- Before creating a project, search Проекты for the same theme under another name. One theme = one card. Merge duplicates into the survivor and relink tasks + goal; delete the loser.
+- Do not mint an empty project. A Проекты row is created only when, in the same message, he says it is a project on the board («создай проект», «заведи в Проекты», «это проект», «стала проектом») **and** names the goal himself (one of `catalog.json` → `board.goals`) **and** the theme is a multi-task effort that will outlive this month. «Сам поймёшь, под какую цель», a sketch with no tasks he named, «хочу», «надо бы», and «идея» fail that test: one row in Идеи (`Статус=Новая`, `Суть` = his words, `Следующий просмотр` empty unless he named a date). Ask once whether to leave it an idea or open a project under a goal he names. Do not pick the goal. Do not edit a goal page to announce the card. Do not invent `Статус`, `Горизонт`, or `Сроки`.
+
+## One card, one place
+
+The outline is the parent chain. A card sits on one rung. Do not copy it onto the ancestor, and do not add a second ladder.
+
+- Projects nest only through `Родительский проект`. Which project contains which is `catalog.json` → `board.projects` (`parent`). That relation is the project tree.
+- A task's `Проект` is exactly one project: the nearest one the work belongs to. A task on a child project links to that child, not also to the project named in `parent`. The ancestor is already on the project card. A second link paints the same task again in every view grouped by `Проект`.
+- A task's `Родительская задача` is the one decomposition parent, or empty. Readable trees are the pages in `catalog.json` → `board.trees`. Do not add another parent, and do not mint a new task whose only job is to repeat a project name.
+- Do not set `Уровень периода`. `Горизонт` is the only horizon. `Уровень периода` is a second axis; leave it empty on a new card.
+- The tasks view «Дорожная карта» shows each card once, nested by `Родительская задача`. It does not group by `Проект`. Grouping by that relation is what repeated the branch.
+
+## What is an idea
+
+- «Идеи» (`catalog.json` → `notion.ideasPageUrl`) is a separate space. A row there is not a project and not a task.
+- It holds things that might become projects and that we review against the goals. The same shelf also holds ways of working: behavior, development, lifestyle, work style.
+- Do not create a project or task wrapper for an idea unless the owner says it became one.
+- A new row is `Статус=Новая`. Consideration has not started. `Суть` is his words. `Следующий просмотр` stays empty unless he named a date.
+- Consideration starts, and the status becomes `Смотрим`, only when he takes the idea as the day's focus, or when a real discussion of that idea starts without the focus: he talks about whether or how to do it, or asks to look into it now (study a link, compare, draft). Capturing the card, moving `Следующий просмотр`, «не поднимать», «отложим рассмотрение», correcting a card that was filed as a project, and the morning or evening line that only names the idea do not start it. Those stay `Новая`. The run that sees the focus or the discussion sets `Смотрим` in that same run.
+- Morning and evening (Mon–Sat) name an idea when `Статус` is `Новая` or `Смотрим` and `Следующий просмотр` is today or earlier. The morning line does not close it and does not move `Новая` to `Смотрим`. Evening asks again until he decides. Skip an empty date, `Отложена`, `Стала проектом`, `Стала задачей`, and `Отвергнута`.
+- The decision is his words only: a task in a project he names (`Стала задачей`), a later date (keep the current status — `Новая` stays `Новая`, `Смотрим` stays `Смотрим` — and move `Следующий просмотр`), or reject (`Отвергнута`). Do not move that date until he has looked. Do not set `Отложена` for a dated postpone: that status is never named again. `Отложена` is only when he says not to remind.
+- `Стала задачей` without a `Задача` link is incomplete. The relation points at the card in Задачи. It is one-way: Задачи does not get a reverse column.
+- A new idea page starts with a callout `Дата` (the same day as `Следующий просмотр`, or `—` when the date is empty), then `## Суть`, then `## Заметки`. When the review date moves, replace that `Дата` mention, delete any `Напоминание:` sentence, and add one page comment: the new date and the previous date. Do not leave the date only in `Следующий просмотр`.
+- The Задачи row an idea becomes is the short research of that idea: look, write a spec or a preliminary plan, decide. He spends time on it. `Статус=Done` on that row means the review is finished. It does not mean the planned work is done, and that row does not wear the horizon of the work.
+- If the review accepts the idea and he wants the work planned, the same run opens `create-task` for the follow-up cards. He names each follow-up's horizon, calendar box, and priority. Project and parent follow `create-task`. The parent is the bigger task this work is a piece of, or empty when he says «без родителя» or the work is its own task. The consideration card is not the parent. A later step in time («потом», «после исследования», «на октябрь») does not set `Родительская задача`. Create only the cards he asked for. The spec and the preliminary plan move onto those follow-ups. The consideration card keeps a short recap, a mention of the follow-up, and stays `Done` when he said the review is finished. Its horizon is the short box of the review (`День`, or the horizon he named for the review). The idea's `Задача` relation stays on the consideration card.
+- If horizon, the calendar box, or priority for a follow-up is still open, ask once and do not create that row.
+
+## «Месяц» means Горизонт=Месяц
+
+- The Tasks view «Месяц» must filter `Горизонт = Месяц` **and** `Статус ∈ {In progress, Not started}`. Status alone is not a month filter.
+- Only tasks the owner explicitly put on this month carry `Горизонт=Месяц`. Everything else stays `Год` (or `Неделя`/`День` if he said so). Do not infer horizon from `In progress`.
+- Check the view's filter before answering «почему я вижу это в виде».
+
+## Reporting
+
+If a step failed or was a no-op, say so in the same message. The owner finding the page himself is worse than admitting the tool did nothing.

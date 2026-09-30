@@ -1,0 +1,190 @@
+{
+  "name": "Personal Assist",
+  "nameRu": "Персональный ассистент",
+  "cursorEnvironment": "Personal Assist",
+  "timezone": "Europe/Moscow",
+  "owner": {
+    "name": "",
+    "fullName": ""
+  },
+  "board": {
+    "goals": [],
+    "projects": [],
+    "paused": [],
+    "treesPageUrl": "",
+    "trees": [],
+    "goalAliases": []
+  },
+  "github": {
+    "repo": "",
+    "branch": "master"
+  },
+  "notion": {
+    "isolation": "same-google-account-new-workspace",
+    "forbiddenWorkspaces": [],
+    "mcpServer": "notion-personal",
+    "workspaceName": "",
+    "workspaceId": "",
+    "hubPageUrl": "",
+    "goalsPageUrl": "",
+    "goalsDataSourceUrl": "",
+    "projectsPageUrl": "",
+    "projectsDataSourceUrl": "",
+    "scratchBinPageUrl": "",
+    "tasksPageUrl": "",
+    "tasksDataSourceUrl": "",
+    "ideasPageUrl": "",
+    "ideasDataSourceUrl": "",
+    "planningPageUrl": "",
+    "planningDataSourceUrl": "",
+    "metricsPageUrl": "",
+    "servicePageUrl": "",
+    "hermesArchivePageUrl": ""
+  },
+  "telegram": {
+    "relayUrl": "",
+    "allowedChatId": "",
+    "forbiddenChats": [],
+    "timezone": "Europe/Moscow",
+    "morning": "0 9 * * *",
+    "evening": "30 22 * * *",
+    "morningAutomationId": "",
+    "eveningAutomationId": "",
+    "feedbackAutomationId": ""
+  },
+  "deploy": {
+    "host": "",
+    "installDir": "",
+    "stateDir": "",
+    "unit": "",
+    "bind": "127.0.0.1",
+    "port": 0,
+    "hermesEnv": "",
+    "cursorEnvName": "",
+    "egressNote": "",
+    "nginxSite": "",
+    "nginxLocation": "",
+    "nginxInsertBefore": "",
+    "python": ""
+  },
+  "ritual": {
+    "dir": "ritual",
+    "rule": ".cursor/rules/ritual-memory.mdc",
+    "journalStart": "",
+    "timezone": "Europe/Moscow"
+  },
+  "lifeControl": {
+    "spec": "journal/life-control.spec.json",
+    "profile": "journal/profile.json",
+    "skill": ".cursor/skills/life-journal/SKILL.md",
+    "surveyScript": "journal/survey-script.json",
+    "surveyState": "journal/survey.json",
+    "entriesDir": "journal/entries",
+    "monthsDir": "journal/months",
+    "askFrom": "",
+    "timezone": "Europe/Moscow",
+    "sourceUrl": "https://docs.google.com/spreadsheets/d/1Qc2hnUyLc3f3RL7lAb-afz24mlnfuc8mfyyvgLLXCuE/htmlview"
+  },
+  "workRoutine": {
+    "spec": "routine/work-routine.spec.json",
+    "skill": ".cursor/skills/routine-log/SKILL.md",
+    "entriesDir": "routine/entries",
+    "askFrom": "",
+    "timezone": "Europe/Moscow"
+  },
+  "freeNotes": {
+    "spec": "notes/notes.spec.json",
+    "skill": ".cursor/skills/free-notes/SKILL.md",
+    "entriesDir": "notes/entries",
+    "timezone": "Europe/Moscow"
+  },
+  "study": {
+    "spec": "study/study.spec.json",
+    "skill": ".cursor/skills/study-log/SKILL.md",
+    "entriesDir": "study/entries",
+    "notionPageUrl": "",
+    "notionDataSourceUrl": "",
+    "topicsFile": "study/topics.json",
+    "targetMinutes": 30,
+    "accrueFrom": "",
+    "askFrom": "",
+    "timezone": "Europe/Moscow"
+  },
+  "telegramArchive": {
+    "baseUrl": "",
+    "skill": ".cursor/skills/telegram-archive/SKILL.md",
+    "api": ".cursor/skills/telegram-archive/api.md",
+    "host": "",
+    "installDir": "",
+    "timezone": "Europe/Moscow",
+    "chatTypes": "channels",
+    "downloadMedia": false,
+    "folders": [],
+    "mcp": {
+      "repo": "https://github.com/GeiserX/telegram-archive-mcp",
+      "serverName": "telegram-archive",
+      "gitCommit": "93c3684cb54ea4de32bea8097787fe6e803613b4",
+      "image": "telegram-archive-mcp:93c3684cb54e",
+      "listen": "127.0.0.1:8095",
+      "publicPath": "/ta-mcp/",
+      "endpoint": ""
+    },
+    "secrets": {
+      "infisicalProjectId": "",
+      "infisicalProject": "",
+      "environmentSlug": "",
+      "secretPath": "",
+      "keys": [
+        "TELEGRAM_ARCHIVE_URL",
+        "TELEGRAM_ARCHIVE_USER",
+        "TELEGRAM_ARCHIVE_PASSWORD",
+        "TELEGRAM_ARCHIVE_MCP_URL",
+        "TELEGRAM_ARCHIVE_MCP_TOKEN"
+      ]
+    }
+  },
+  "econumo": {
+    "baseUrl": "http://93.125.18.54:8182",
+    "skill": ".cursor/skills/econumo/SKILL.md",
+    "paceScript": ".cursor/skills/econumo/scripts/spending_pace.py",
+    "importScript": ".cursor/skills/econumo/scripts/import_1money.py",
+    "currency": "",
+    "folders": {
+      "own": "Счета",
+      "debts": "Долги"
+    },
+    "budget": {
+      "name": "",
+      "currency": ""
+    },
+    "defaultAccount": "",
+    "defaultAccountSetOn": "",
+    "accounts": [],
+    "debtAccounts": [],
+    "debtNameStoredAs": {},
+    "removedAccounts": [],
+    "categoryNotAccount": [],
+    "aliases": {},
+    "importNames": {},
+    "deletedFolder": "Удалённые",
+    "deletedSuffix": "· удалён",
+    "uncategorized": "Без категории",
+    "historyImport": {
+      "file": "",
+      "loaded": false,
+      "from": "",
+      "through": ""
+    },
+    "secrets": {
+      "infisicalProjectId": "",
+      "infisicalProject": "",
+      "environmentSlug": "",
+      "secretPath": "",
+      "keys": [
+        "ECONUMO_BASE_URL",
+        "ECONUMO_USERNAME",
+        "ECONUMO_PASSWORD"
+      ]
+    }
+  }
+}
