@@ -1,0 +1,2268 @@
+{
+  "exportedAt": "2026-10-02",
+  "containsRows": false,
+  "sourceWorkspace": "Иван Снаров’s Space",
+  "sourceWorkspaceId": "0cb848ef-ca3e-8195-b1dc-00039f4b11bf",
+  "emptyStructurePage": {
+    "title": "Home — структура",
+    "url": "https://shimmer-tarp-469.notion.site/Home-80a848efca3e83d1bfbc01184487e20b",
+    "allowDuplicate": true,
+    "searchEngineIndexing": false,
+    "note": "Публичная страница с пустой структурой. Duplicate as template включён. Строк в базах нет. Живой Home по этой ссылке не открывается."
+  },
+  "hub": {
+    "title": "Home",
+    "icon": "🧭",
+    "sourcePageUrl": "https://www.notion.so/3db848efca3e8173b9f2d990093f9583",
+    "children": [
+      {
+        "type": "callout",
+        "icon": "🧭",
+        "color": "gray_background",
+        "text": "Цели → проекты → задачи. Дерево: год → месяц → день. Один проект может закрывать несколько целей. Канбан и декомпозиция — на страницах баз. План дня — во вкладке Дни."
+      },
+      {
+        "type": "text",
+        "text": "Рабочие базы: ",
+        "mentions": [
+          "goals",
+          "projects",
+          "tasks"
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Идеи — отдельно, не проекты: ",
+        "mentions": [
+          "ideas"
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Учёба — отдельно, не задачи: минимум 30 минут каждый день кроме воскресенья. ",
+        "mentions": [
+          "study"
+        ]
+      },
+      {
+        "type": "database",
+        "slug": "goals"
+      },
+      {
+        "type": "database",
+        "slug": "projects"
+      },
+      {
+        "type": "database",
+        "slug": "tasks"
+      },
+      {
+        "type": "database",
+        "slug": "focus"
+      },
+      {
+        "type": "page",
+        "title": "Деревья",
+        "icon": "📂",
+        "children": [
+          {
+            "type": "text",
+            "text": "Текстовые деревья задач. Крупнее строка — длиннее горизонт. Рамка с отступом — задача вложена в родителя. Агент переписывает страницы, когда меняется статус задачи."
+          }
+        ],
+        "note": "Страницы «Дерево: …» — отрисованные деревья текущих проектов. В пакет не входят. Их заново пишет скилл task-trees."
+      },
+      {
+        "type": "database",
+        "slug": "ideas"
+      },
+      {
+        "type": "database",
+        "slug": "study"
+      },
+      {
+        "type": "page",
+        "title": "Не проекты",
+        "icon": "🗑️",
+        "children": [],
+        "note": "Пустая корзина для удаления строк из баз. Содержимое исходной страницы не копируется."
+      }
+    ]
+  },
+  "databases": [
+    {
+      "slug": "goals",
+      "title": "Цели",
+      "icon": "🎯",
+      "onHub": true,
+      "sourcePageAlive": true,
+      "sourcePageUrl": "https://www.notion.so/10e2b7b4841a462f9788ef5f961f267f",
+      "sourceDataSourceUrl": "collection://75f4bd44-fffb-453d-9b08-ead26da310ba",
+      "properties": [
+        {
+          "name": "Декомпозиция",
+          "type": "select",
+          "options": [
+            {
+              "name": "Параллельно",
+              "color": "blue"
+            },
+            {
+              "name": "Последовательно",
+              "color": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Горизонт",
+          "type": "select",
+          "options": [
+            {
+              "name": "Год",
+              "color": "purple"
+            },
+            {
+              "name": "Квартал",
+              "color": "blue"
+            },
+            {
+              "name": "Месяц",
+              "color": "green"
+            },
+            {
+              "name": "Неделя",
+              "color": "yellow"
+            },
+            {
+              "name": "День",
+              "color": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Статус",
+          "type": "status",
+          "options": [
+            {
+              "name": "Not started",
+              "color": "gray"
+            },
+            {
+              "name": "In progress",
+              "color": "blue"
+            },
+            {
+              "name": "On hold",
+              "color": "yellow"
+            },
+            {
+              "name": "Achieved",
+              "color": "green"
+            },
+            {
+              "name": "Dropped",
+              "color": "red"
+            }
+          ],
+          "groups": [
+            {
+              "name": "To-do",
+              "options": [
+                "Not started"
+              ]
+            },
+            {
+              "name": "In progress",
+              "options": [
+                "In progress",
+                "On hold"
+              ]
+            },
+            {
+              "name": "Complete",
+              "options": [
+                "Achieved",
+                "Dropped"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Уровень периода",
+          "type": "select",
+          "options": [
+            {
+              "name": "1 Год",
+              "color": "purple"
+            },
+            {
+              "name": "2 Квартал",
+              "color": "blue"
+            },
+            {
+              "name": "3 Месяц",
+              "color": "green"
+            },
+            {
+              "name": "4 Неделя",
+              "color": "yellow"
+            },
+            {
+              "name": "5 День",
+              "color": "orange"
+            }
+          ]
+        },
+        {
+          "name": "ID Гермеса",
+          "type": "text"
+        },
+        {
+          "name": "Уровень",
+          "type": "formula",
+          "expression": "if(prop(\"Горизонт\") == \"Год\", \"1 Год\", if(prop(\"Горизонт\") == \"Квартал\", \"2 Квартал\", if(prop(\"Горизонт\") == \"Месяц\", \"3 Месяц\", if(prop(\"Горизонт\") == \"Неделя\", \"4 Неделя\", if(prop(\"Горизонт\") == \"День\", \"5 День\", \"\")))))",
+          "resultType": "text"
+        },
+        {
+          "name": "Период",
+          "type": "date"
+        },
+        {
+          "name": "Сфера",
+          "type": "select",
+          "options": [
+            {
+              "name": "Дом",
+              "color": "orange"
+            },
+            {
+              "name": "Семья",
+              "color": "pink"
+            },
+            {
+              "name": "Здоровье",
+              "color": "green"
+            },
+            {
+              "name": "Карьера",
+              "color": "blue"
+            },
+            {
+              "name": "Финансы",
+              "color": "yellow"
+            },
+            {
+              "name": "Обучение",
+              "color": "purple"
+            },
+            {
+              "name": "Другое",
+              "color": "gray"
+            }
+          ]
+        },
+        {
+          "name": "Блокируется",
+          "type": "relation",
+          "description": "Goals that must finish first.",
+          "target": "goals",
+          "pairedProperty": "Блокирует"
+        },
+        {
+          "name": "Блокирует",
+          "type": "relation",
+          "target": "goals",
+          "pairedProperty": "Блокируется"
+        },
+        {
+          "name": "Проекты",
+          "type": "relation",
+          "description": "Projects that contribute to this goal.",
+          "target": "projects",
+          "pairedProperty": "Цели"
+        },
+        {
+          "name": "Циклы",
+          "type": "relation",
+          "target": "focus",
+          "pairedProperty": "Цели"
+        },
+        {
+          "name": "Метрики",
+          "type": "relation",
+          "target": "metrics",
+          "pairedProperty": "Цели"
+        },
+        {
+          "name": "Родительская цель",
+          "type": "relation",
+          "description": "Parent goal for decomposition.",
+          "target": "goals",
+          "pairedProperty": "Подцели",
+          "limit": 1
+        },
+        {
+          "name": "Факт проектов (ч)",
+          "type": "rollup",
+          "relation": "Проекты",
+          "targetProperty": "Факт (ч)",
+          "aggregation": "sum"
+        },
+        {
+          "name": "Оценка проектов (ч)",
+          "type": "rollup",
+          "relation": "Проекты",
+          "targetProperty": "Оценка (ч)",
+          "aggregation": "sum"
+        },
+        {
+          "name": "Подцели",
+          "type": "relation",
+          "description": "Child goals under this goal.",
+          "target": "goals",
+          "pairedProperty": "Родительская цель"
+        },
+        {
+          "name": "Прогресс",
+          "type": "number",
+          "numberFormat": "percent"
+        },
+        {
+          "name": "Оценка (ч)",
+          "type": "number"
+        },
+        {
+          "name": "Результат",
+          "type": "text",
+          "description": "A concrete definition of success."
+        },
+        {
+          "name": "Приоритет",
+          "type": "select",
+          "options": [
+            {
+              "name": "Максимальный",
+              "color": "pink"
+            },
+            {
+              "name": "Высокий",
+              "color": "red"
+            },
+            {
+              "name": "Средний",
+              "color": "yellow"
+            },
+            {
+              "name": "Низкий",
+              "color": "gray"
+            }
+          ]
+        },
+        {
+          "name": "Факт (ч)",
+          "type": "number"
+        },
+        {
+          "name": "Цель",
+          "type": "title"
+        }
+      ],
+      "views": [
+        {
+          "name": "Список",
+          "type": "table",
+          "visibleProperties": [
+            "Цель",
+            "Статус",
+            "Сфера",
+            "Горизонт",
+            "Проекты",
+            "Прогресс",
+            "Родительская цель"
+          ],
+          "subitemFilterScope": "parents_and_subitems"
+        },
+        {
+          "name": "Дорожная карта",
+          "type": "timeline",
+          "visibleProperties": [
+            "Цель",
+            "Статус",
+            "Горизонт",
+            "Прогресс",
+            "Проекты"
+          ],
+          "timelineBy": "Период",
+          "showTable": true
+        },
+        {
+          "name": "Декомпозиция",
+          "type": "list",
+          "visibleProperties": [
+            "Цель",
+            "Статус",
+            "Горизонт",
+            "Декомпозиция",
+            "Родительская цель",
+            "Оценка (ч)",
+            "Проекты"
+          ],
+          "groupBy": {
+            "property": "Родительская цель",
+            "propertyType": "relation",
+            "hideEmptyGroups": false,
+            "sort": {
+              "type": "manual"
+            }
+          }
+        },
+        {
+          "name": "По горизонту",
+          "type": "table",
+          "visibleProperties": [
+            "Цель",
+            "Статус",
+            "Сфера",
+            "Горизонт",
+            "Проекты",
+            "Прогресс"
+          ],
+          "sorts": [
+            {
+              "property": "Уровень периода",
+              "direction": "ascending"
+            },
+            {
+              "property": "Период",
+              "direction": "ascending"
+            }
+          ],
+          "groupBy": {
+            "property": "Горизонт",
+            "propertyType": "select",
+            "hideEmptyGroups": true,
+            "sort": {
+              "type": "manual"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "projects",
+      "title": "Проекты",
+      "icon": "📁",
+      "onHub": true,
+      "sourcePageAlive": true,
+      "sourcePageUrl": "https://www.notion.so/d3f393930db64be39361fae28e873347",
+      "sourceDataSourceUrl": "collection://84986d61-4cfb-4941-9cf9-fef96b37b2ae",
+      "properties": [
+        {
+          "name": "Прогресс",
+          "type": "formula",
+          "expression": "lets(d, toNumber(prop(\"Готово задач\")) + toNumber(prop(\"Готово в подпроектах\")), t, toNumber(prop(\"Всего задач\")) + toNumber(prop(\"Всего в подпроектах\")), if(t == 0, \"0%\", formatNumber(d / t, \"percent\", 0)))",
+          "resultType": "text"
+        },
+        {
+          "name": "Оценка (ч)",
+          "type": "number"
+        },
+        {
+          "name": "Ранг",
+          "type": "formula",
+          "expression": "if(prop(\"Горизонт\") == \"Год\", 1, if(prop(\"Горизонт\") == \"Квартал\", 2, if(prop(\"Горизонт\") == \"Месяц\", 3, if(prop(\"Горизонт\") == \"Неделя\", 4, if(prop(\"Горизонт\") == \"День\", 5, 9)))))",
+          "resultType": "number"
+        },
+        {
+          "name": "Горизонт",
+          "type": "select",
+          "options": [
+            {
+              "name": "Год",
+              "color": "purple"
+            },
+            {
+              "name": "Квартал",
+              "color": "blue"
+            },
+            {
+              "name": "Месяц",
+              "color": "green"
+            },
+            {
+              "name": "Неделя",
+              "color": "yellow"
+            },
+            {
+              "name": "День",
+              "color": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Готово задач",
+          "type": "rollup",
+          "relation": "Задачи",
+          "targetProperty": "Балл",
+          "aggregation": "sum"
+        },
+        {
+          "name": "Всего в подпроектах",
+          "type": "rollup",
+          "relation": "Подпроекты",
+          "targetProperty": "Всего число",
+          "aggregation": "sum"
+        },
+        {
+          "name": "Готово число",
+          "type": "formula",
+          "expression": "toNumber(prop(\"Готово задач\"))",
+          "resultType": "number"
+        },
+        {
+          "name": "Цели",
+          "type": "relation",
+          "description": "Goal this project contributes to.",
+          "target": "goals",
+          "pairedProperty": "Проекты"
+        },
+        {
+          "name": "Уровень",
+          "type": "formula",
+          "expression": "if(prop(\"Горизонт\") == \"Год\", \"1 Год\", if(prop(\"Горизонт\") == \"Квартал\", \"2 Квартал\", if(prop(\"Горизонт\") == \"Месяц\", \"3 Месяц\", if(prop(\"Горизонт\") == \"Неделя\", \"4 Неделя\", if(prop(\"Горизонт\") == \"День\", \"5 День\", \"\")))))",
+          "resultType": "text"
+        },
+        {
+          "name": "Блокируется",
+          "type": "relation",
+          "target": "projects",
+          "pairedProperty": "Блокирует"
+        },
+        {
+          "name": "Блокирует",
+          "type": "relation",
+          "target": "projects",
+          "pairedProperty": "Блокируется"
+        },
+        {
+          "name": "Декомпозиция",
+          "type": "select",
+          "options": [
+            {
+              "name": "Параллельно",
+              "color": "blue"
+            },
+            {
+              "name": "Последовательно",
+              "color": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Метрики",
+          "type": "relation",
+          "target": "metrics",
+          "pairedProperty": "Проекты"
+        },
+        {
+          "name": "ID Гермеса",
+          "type": "text"
+        },
+        {
+          "name": "Результат",
+          "type": "text",
+          "description": "What this project must deliver."
+        },
+        {
+          "name": "Родительский проект",
+          "type": "relation",
+          "target": "projects",
+          "pairedProperty": "Подпроекты",
+          "limit": 1
+        },
+        {
+          "name": "Факт (ч)",
+          "type": "number"
+        },
+        {
+          "name": "Подпроекты",
+          "type": "relation",
+          "target": "projects",
+          "pairedProperty": "Родительский проект"
+        },
+        {
+          "name": "Готово в подпроектах",
+          "type": "rollup",
+          "relation": "Подпроекты",
+          "targetProperty": "Готово число",
+          "aggregation": "sum"
+        },
+        {
+          "name": "Факт задач (ч)",
+          "type": "rollup",
+          "relation": "Задачи",
+          "targetProperty": "Факт (ч)",
+          "aggregation": "sum"
+        },
+        {
+          "name": "Оценка задач (ч)",
+          "type": "rollup",
+          "relation": "Задачи",
+          "targetProperty": "Оценка (ч)",
+          "aggregation": "sum"
+        },
+        {
+          "name": "Циклы",
+          "type": "relation",
+          "target": "focus",
+          "pairedProperty": "Проекты"
+        },
+        {
+          "name": "Задачи",
+          "type": "relation",
+          "description": "Tasks belonging to this project.",
+          "target": "tasks",
+          "pairedProperty": "Проект"
+        },
+        {
+          "name": "Уровень периода",
+          "type": "select",
+          "options": [
+            {
+              "name": "1 Год",
+              "color": "purple"
+            },
+            {
+              "name": "2 Квартал",
+              "color": "blue"
+            },
+            {
+              "name": "3 Месяц",
+              "color": "green"
+            },
+            {
+              "name": "4 Неделя",
+              "color": "yellow"
+            },
+            {
+              "name": "5 День",
+              "color": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Всего задач",
+          "type": "rollup",
+          "relation": "Задачи",
+          "targetProperty": "Считать",
+          "aggregation": "sum"
+        },
+        {
+          "name": "Всего число",
+          "type": "formula",
+          "expression": "toNumber(prop(\"Всего задач\"))",
+          "resultType": "number"
+        },
+        {
+          "name": "Проект",
+          "type": "title"
+        },
+        {
+          "name": "Владелец",
+          "type": "person"
+        },
+        {
+          "name": "Статус",
+          "type": "status",
+          "options": [
+            {
+              "name": "Planning",
+              "color": "blue"
+            },
+            {
+              "name": "In progress",
+              "color": "yellow"
+            },
+            {
+              "name": "Paused",
+              "color": "purple"
+            },
+            {
+              "name": "Backlog",
+              "color": "default"
+            },
+            {
+              "name": "Done",
+              "color": "green"
+            },
+            {
+              "name": "Cancelled",
+              "color": "red"
+            }
+          ],
+          "groups": [
+            {
+              "name": "To-do",
+              "options": [
+                "Backlog"
+              ]
+            },
+            {
+              "name": "In progress",
+              "options": [
+                "Planning",
+                "In progress",
+                "Paused"
+              ]
+            },
+            {
+              "name": "Complete",
+              "options": [
+                "Cancelled",
+                "Done"
+              ]
+            }
+          ],
+          "default": "Backlog"
+        },
+        {
+          "name": "Сроки",
+          "type": "date"
+        }
+      ],
+      "views": [
+        {
+          "name": "Список",
+          "type": "table",
+          "visibleProperties": [
+            "Проект",
+            "Статус",
+            "Цели",
+            "Горизонт",
+            "Прогресс",
+            "Сроки"
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "property": "Статус",
+                "operator": "status_is_not",
+                "value": {
+                  "type": "is_option",
+                  "value": "Cancelled"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Канбан",
+          "type": "board",
+          "visibleProperties": [
+            "Проект",
+            "Цели",
+            "Горизонт",
+            "Сроки",
+            "Прогресс",
+            "Владелец"
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "property": "Статус",
+                "operator": "status_is_not",
+                "value": {
+                  "type": "is_option",
+                  "value": "Cancelled"
+                }
+              }
+            ]
+          },
+          "groupBy": {
+            "property": "Статус",
+            "propertyType": "status",
+            "hideEmptyGroups": false,
+            "sort": {
+              "type": "ascending"
+            },
+            "groupBy": "group"
+          },
+          "coverSize": "medium"
+        },
+        {
+          "name": "Дорожная карта",
+          "type": "timeline",
+          "visibleProperties": [
+            "Проект",
+            "Цели",
+            "Статус",
+            "Горизонт",
+            "Родительский проект"
+          ],
+          "sorts": [
+            {
+              "property": "Уровень периода",
+              "direction": "ascending"
+            },
+            {
+              "property": "Сроки",
+              "direction": "ascending"
+            }
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "property": "Статус",
+                "operator": "status_is_not",
+                "value": {
+                  "type": "is_option",
+                  "value": "Cancelled"
+                }
+              }
+            ]
+          },
+          "groupBy": {
+            "property": "Горизонт",
+            "propertyType": "select",
+            "hideEmptyGroups": true,
+            "sort": {
+              "type": "manual"
+            }
+          },
+          "timelineBy": "Сроки",
+          "showTable": true,
+          "timelineZoom": "month"
+        },
+        {
+          "name": "Декомпозиция",
+          "type": "list",
+          "visibleProperties": [
+            "Проект",
+            "Статус",
+            "Горизонт",
+            "Декомпозиция",
+            "Цели",
+            "Оценка (ч)"
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "property": "Статус",
+                "operator": "status_is_not",
+                "value": {
+                  "type": "is_option",
+                  "value": "Cancelled"
+                }
+              }
+            ]
+          },
+          "groupBy": {
+            "property": "Родительский проект",
+            "propertyType": "relation",
+            "hideEmptyGroups": true,
+            "sort": {
+              "type": "ascending"
+            }
+          }
+        },
+        {
+          "name": "По целям",
+          "type": "table",
+          "visibleProperties": [
+            "Проект",
+            "Статус",
+            "Горизонт",
+            "Цели",
+            "Прогресс",
+            "Задачи"
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "property": "Статус",
+                "operator": "status_is_not",
+                "value": {
+                  "type": "is_option",
+                  "value": "Cancelled"
+                }
+              }
+            ]
+          },
+          "groupBy": {
+            "property": "Цели",
+            "propertyType": "relation",
+            "hideEmptyGroups": false,
+            "sort": {
+              "type": "manual"
+            }
+          }
+        },
+        {
+          "name": "По горизонту",
+          "type": "table",
+          "visibleProperties": [
+            "Проект",
+            "Статус",
+            "Горизонт",
+            "Цели",
+            "Сроки",
+            "Родительский проект"
+          ],
+          "sorts": [
+            {
+              "property": "Уровень периода",
+              "direction": "ascending"
+            },
+            {
+              "property": "Сроки",
+              "direction": "ascending"
+            }
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "property": "Статус",
+                "operator": "status_is_not",
+                "value": {
+                  "type": "is_option",
+                  "value": "Cancelled"
+                }
+              }
+            ]
+          },
+          "groupBy": {
+            "property": "Горизонт",
+            "propertyType": "select",
+            "hideEmptyGroups": true,
+            "sort": {
+              "type": "manual"
+            }
+          },
+          "subitemFilterScope": "parents_and_subitems"
+        }
+      ]
+    },
+    {
+      "slug": "tasks",
+      "title": "Задачи",
+      "icon": "✅",
+      "onHub": true,
+      "sourcePageAlive": true,
+      "sourcePageUrl": "https://www.notion.so/cc4ced7ffe6c4b4faf449a9a690b37b3",
+      "sourceDataSourceUrl": "collection://bde0e1c7-521a-44e6-b9cb-6f990813fe88",
+      "properties": [
+        {
+          "name": "Уровень",
+          "type": "formula",
+          "expression": "if(prop(\"Горизонт\") == \"Год\", \"1 Год\", if(prop(\"Горизонт\") == \"Квартал\", \"2 Квартал\", if(prop(\"Горизонт\") == \"Месяц\", \"3 Месяц\", if(prop(\"Горизонт\") == \"Неделя\", \"4 Неделя\", if(prop(\"Горизонт\") == \"День\", \"5 День\", \"\")))))",
+          "resultType": "text"
+        },
+        {
+          "name": "Считать",
+          "type": "formula",
+          "expression": "if(and(prop(\"Статус\") != \"Archived\", prop(\"Подзадачи\").length() == 0), 1, 0)",
+          "resultType": "number"
+        },
+        {
+          "name": "Фокус сегодня",
+          "type": "checkbox"
+        },
+        {
+          "name": "Родительская задача",
+          "type": "relation",
+          "description": "Link a subtask to its parent task.",
+          "target": "tasks",
+          "pairedProperty": "Подзадачи",
+          "limit": 1
+        },
+        {
+          "name": "Проект",
+          "type": "relation",
+          "description": "Project this task belongs to.",
+          "target": "projects",
+          "pairedProperty": "Задачи"
+        },
+        {
+          "name": "Факт (ч)",
+          "type": "number"
+        },
+        {
+          "name": "Цикл",
+          "type": "relation",
+          "target": "focus",
+          "pairedProperty": "Задачи"
+        },
+        {
+          "name": "Порядок",
+          "type": "number"
+        },
+        {
+          "name": "Ранг",
+          "type": "formula",
+          "expression": "if(prop(\"Горизонт\") == \"Год\", 1, if(prop(\"Горизонт\") == \"Квартал\", 2, if(prop(\"Горизонт\") == \"Месяц\", 3, if(prop(\"Горизонт\") == \"Неделя\", 4, if(prop(\"Горизонт\") == \"День\", 5, 9)))))",
+          "resultType": "number"
+        },
+        {
+          "name": "Оценка (ч)",
+          "type": "number"
+        },
+        {
+          "name": "Горизонт",
+          "type": "select",
+          "options": [
+            {
+              "name": "Год",
+              "color": "purple"
+            },
+            {
+              "name": "Квартал",
+              "color": "blue"
+            },
+            {
+              "name": "Месяц",
+              "color": "green"
+            },
+            {
+              "name": "Неделя",
+              "color": "yellow"
+            },
+            {
+              "name": "День",
+              "color": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Блокируется",
+          "type": "relation",
+          "target": "tasks",
+          "pairedProperty": "Блокирует"
+        },
+        {
+          "name": "Блокирует",
+          "type": "relation",
+          "target": "tasks",
+          "pairedProperty": "Блокируется"
+        },
+        {
+          "name": "Уровень периода",
+          "type": "select",
+          "options": [
+            {
+              "name": "1 Год",
+              "color": "purple"
+            },
+            {
+              "name": "2 Квартал",
+              "color": "blue"
+            },
+            {
+              "name": "3 Месяц",
+              "color": "green"
+            },
+            {
+              "name": "4 Неделя",
+              "color": "yellow"
+            },
+            {
+              "name": "5 День",
+              "color": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Декомпозиция",
+          "type": "select",
+          "options": [
+            {
+              "name": "Параллельно",
+              "color": "blue"
+            },
+            {
+              "name": "Последовательно",
+              "color": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Балл",
+          "type": "formula",
+          "expression": "if(and(prop(\"Статус\") != \"Archived\", prop(\"Подзадачи\").length() == 0, prop(\"Статус\") == \"Done\"), 1, 0)",
+          "resultType": "number"
+        },
+        {
+          "name": "Приоритет",
+          "type": "select",
+          "options": [
+            {
+              "name": "Максимальный",
+              "color": "pink"
+            },
+            {
+              "name": "Высокий",
+              "color": "red"
+            },
+            {
+              "name": "Средний",
+              "color": "yellow"
+            },
+            {
+              "name": "Низкий",
+              "color": "gray"
+            }
+          ]
+        },
+        {
+          "name": "Подзадачи",
+          "type": "relation",
+          "description": "Child tasks.",
+          "target": "tasks",
+          "pairedProperty": "Родительская задача"
+        },
+        {
+          "name": "Place",
+          "type": "place"
+        },
+        {
+          "name": "Задача",
+          "type": "title"
+        },
+        {
+          "name": "Исполнитель",
+          "type": "person"
+        },
+        {
+          "name": "Статус",
+          "type": "status",
+          "options": [
+            {
+              "name": "Запланировано",
+              "color": "gray"
+            },
+            {
+              "name": "Not started",
+              "color": "default"
+            },
+            {
+              "name": "In progress",
+              "color": "blue"
+            },
+            {
+              "name": "Done",
+              "color": "green"
+            },
+            {
+              "name": "Archived",
+              "color": "gray"
+            }
+          ],
+          "groups": [
+            {
+              "name": "To-do",
+              "options": [
+                "Запланировано",
+                "Not started"
+              ]
+            },
+            {
+              "name": "In progress",
+              "options": [
+                "In progress"
+              ]
+            },
+            {
+              "name": "Complete",
+              "options": [
+                "Done",
+                "Archived"
+              ]
+            }
+          ],
+          "default": "Not started"
+        },
+        {
+          "name": "Срок",
+          "type": "date"
+        }
+      ],
+      "views": [
+        {
+          "name": "Список",
+          "type": "table",
+          "visibleProperties": [
+            "Задача",
+            "Статус",
+            "Проект",
+            "Родительская задача",
+            "Приоритет",
+            "Срок",
+            "Горизонт"
+          ],
+          "sorts": [
+            {
+              "property": "Уровень периода",
+              "direction": "ascending"
+            },
+            {
+              "property": "Срок",
+              "direction": "ascending"
+            }
+          ]
+        },
+        {
+          "name": "Канбан: дети",
+          "type": "board",
+          "visibleProperties": [
+            "Задача",
+            "Срок",
+            "Горизонт",
+            "Родительская задача",
+            "Проект",
+            "Приоритет",
+            "Оценка (ч)"
+          ],
+          "sorts": [
+            {
+              "property": "Уровень периода",
+              "direction": "ascending"
+            },
+            {
+              "property": "Срок",
+              "direction": "ascending"
+            }
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "property": "Родительская задача",
+                "operator": "is_not_empty"
+              }
+            ]
+          },
+          "groupBy": {
+            "property": "Статус",
+            "propertyType": "status",
+            "hideEmptyGroups": true,
+            "sort": {
+              "type": "ascending"
+            },
+            "groupBy": "option"
+          }
+        },
+        {
+          "name": "Канбан: родители",
+          "type": "board",
+          "visibleProperties": [
+            "Задача",
+            "Срок",
+            "Горизонт",
+            "Родительская задача",
+            "Проект",
+            "Приоритет",
+            "Оценка (ч)"
+          ],
+          "sorts": [
+            {
+              "property": "Уровень периода",
+              "direction": "ascending"
+            },
+            {
+              "property": "Срок",
+              "direction": "ascending"
+            }
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "property": "Родительская задача",
+                "operator": "is_empty"
+              }
+            ]
+          },
+          "groupBy": {
+            "property": "Статус",
+            "propertyType": "status",
+            "hideEmptyGroups": true,
+            "sort": {
+              "type": "ascending"
+            },
+            "groupBy": "option"
+          }
+        },
+        {
+          "name": "Сегодня",
+          "type": "list",
+          "visibleProperties": [
+            "Задача",
+            "Статус",
+            "Горизонт",
+            "Проект",
+            "Приоритет",
+            "Оценка (ч)"
+          ],
+          "sorts": [
+            {
+              "property": "Приоритет",
+              "direction": "ascending"
+            }
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "property": "Фокус сегодня",
+                "operator": "checkbox_is",
+                "value": {
+                  "type": "exact",
+                  "value": true
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Неделя",
+          "type": "list",
+          "visibleProperties": [
+            "Задача",
+            "Статус",
+            "Горизонт",
+            "Проект",
+            "Приоритет",
+            "Срок",
+            "Оценка (ч)"
+          ],
+          "sorts": [
+            {
+              "property": "Срок",
+              "direction": "ascending"
+            }
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "property": "Срок",
+                "operator": "date_is_within",
+                "value": {
+                  "type": "relative",
+                  "value": "this_week"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Месяц",
+          "type": "list",
+          "visibleProperties": [
+            "Задача",
+            "Статус",
+            "Проект",
+            "Приоритет",
+            "Срок"
+          ],
+          "sorts": [
+            {
+              "property": "Срок",
+              "direction": "ascending"
+            }
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "operator": "and",
+                "filters": [
+                  {
+                    "property": "Горизонт",
+                    "operator": "enum_is",
+                    "value": {
+                      "type": "exact",
+                      "value": "Месяц"
+                    }
+                  }
+                ]
+              },
+              {
+                "operator": "or",
+                "filters": [
+                  {
+                    "property": "Статус",
+                    "operator": "status_is",
+                    "value": {
+                      "type": "is_option",
+                      "value": "In progress"
+                    }
+                  },
+                  {
+                    "property": "Статус",
+                    "operator": "status_is",
+                    "value": {
+                      "type": "is_option",
+                      "value": "Not started"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Квартал",
+          "type": "list",
+          "visibleProperties": [
+            "Задача",
+            "Статус",
+            "Горизонт",
+            "Проект",
+            "Оценка (ч)"
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "property": "Горизонт",
+                "operator": "enum_is",
+                "value": {
+                  "type": "exact",
+                  "value": "Квартал"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Дорожная карта",
+          "type": "timeline",
+          "visibleProperties": [
+            "Задача",
+            "Горизонт",
+            "Проект",
+            "Статус",
+            "Срок"
+          ],
+          "sorts": [
+            {
+              "property": "Уровень периода",
+              "direction": "ascending"
+            },
+            {
+              "property": "Срок",
+              "direction": "ascending"
+            }
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "operator": "or",
+                "filters": [
+                  {
+                    "property": "Статус",
+                    "operator": "status_is",
+                    "value": {
+                      "type": "is_option",
+                      "value": "In progress"
+                    }
+                  },
+                  {
+                    "property": "Статус",
+                    "operator": "status_is",
+                    "value": {
+                      "type": "is_option",
+                      "value": "Запланировано"
+                    }
+                  },
+                  {
+                    "property": "Статус",
+                    "operator": "status_is",
+                    "value": {
+                      "type": "is_option",
+                      "value": "Not started"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "timelineBy": "Срок",
+          "showTable": false,
+          "timelineZoom": "quarter",
+          "subitemFilterScope": "parents_and_subitems",
+          "omittedRowFilters": [
+            {
+              "operator": "relation_does_not_contain",
+              "property": "Проект",
+              "reason": "Фильтр ссылается на конкретную карточку исходной доски. В пустой структуре её нет."
+            }
+          ]
+        },
+        {
+          "name": "По горизонту",
+          "type": "table",
+          "visibleProperties": [
+            "Задача",
+            "Статус",
+            "Горизонт",
+            "Родительская задача",
+            "Проект",
+            "Приоритет",
+            "Срок"
+          ],
+          "sorts": [
+            {
+              "property": "Уровень периода",
+              "direction": "ascending"
+            },
+            {
+              "property": "Срок",
+              "direction": "ascending"
+            }
+          ],
+          "groupBy": {
+            "property": "Горизонт",
+            "propertyType": "select",
+            "hideEmptyGroups": true,
+            "sort": {
+              "type": "manual"
+            }
+          }
+        },
+        {
+          "name": "Канбан",
+          "type": "board",
+          "visibleProperties": [
+            "Задача",
+            "Срок",
+            "Горизонт",
+            "Родительская задача",
+            "Проект",
+            "Приоритет",
+            "Оценка (ч)"
+          ],
+          "groupBy": {
+            "property": "Статус",
+            "propertyType": "status",
+            "hideEmptyGroups": false,
+            "sort": {
+              "type": "manual"
+            },
+            "groupBy": "option"
+          },
+          "coverSize": "medium",
+          "cardLayout": {
+            "mode": "list"
+          }
+        },
+        {
+          "name": "Дерево",
+          "type": "table",
+          "visibleProperties": [
+            "Задача",
+            "Горизонт",
+            "Статус",
+            "Декомпозиция",
+            "Порядок"
+          ],
+          "sorts": [
+            {
+              "property": "Уровень периода",
+              "direction": "ascending"
+            },
+            {
+              "property": "Порядок",
+              "direction": "ascending"
+            }
+          ],
+          "filter": {
+            "operator": "or",
+            "filters": [
+              {
+                "operator": "and",
+                "filters": [
+                  {
+                    "property": "Родительская задача",
+                    "operator": "is_not_empty"
+                  }
+                ]
+              },
+              {
+                "operator": "and",
+                "filters": [
+                  {
+                    "property": "Подзадачи",
+                    "operator": "is_not_empty"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Декомпозиция",
+          "type": "list",
+          "visibleProperties": [
+            "Задача",
+            "Декомпозиция"
+          ],
+          "sorts": [
+            {
+              "property": "Уровень периода",
+              "direction": "ascending"
+            },
+            {
+              "property": "Порядок",
+              "direction": "ascending"
+            }
+          ],
+          "filter": {
+            "operator": "or",
+            "filters": [
+              {
+                "operator": "and",
+                "filters": [
+                  {
+                    "property": "Родительская задача",
+                    "operator": "is_not_empty"
+                  }
+                ]
+              },
+              {
+                "operator": "and",
+                "filters": [
+                  {
+                    "property": "Подзадачи",
+                    "operator": "is_not_empty"
+                  }
+                ]
+              }
+            ]
+          },
+          "timelineBy": "Срок",
+          "showTable": null,
+          "calendarBy": "Срок",
+          "cardLayout": {
+            "mode": "compact"
+          },
+          "subitemFilterScope": "parents_and_subitems"
+        },
+        {
+          "name": "Канбан: все",
+          "type": "board",
+          "visibleProperties": [
+            "Задача",
+            "Срок",
+            "Горизонт",
+            "Родительская задача",
+            "Проект",
+            "Приоритет",
+            "Оценка (ч)"
+          ],
+          "sorts": [
+            {
+              "property": "Уровень периода",
+              "direction": "ascending"
+            },
+            {
+              "property": "Срок",
+              "direction": "ascending"
+            }
+          ],
+          "groupBy": {
+            "property": "Статус",
+            "propertyType": "status",
+            "hideEmptyGroups": true,
+            "sort": {
+              "type": "ascending"
+            },
+            "groupBy": "option"
+          }
+        }
+      ],
+      "templates": [
+        {
+          "name": "New task",
+          "body": "empty",
+          "sourceIsTemplate": true
+        }
+      ]
+    },
+    {
+      "slug": "focus",
+      "title": "Фокус",
+      "icon": "🔄",
+      "onHub": true,
+      "sourcePageAlive": true,
+      "sourcePageUrl": "https://www.notion.so/a1eb4a5ce0824bb0ae7718895a7bcf7c",
+      "sourceDataSourceUrl": "collection://b82a80fa-3b7c-4bb4-89ad-13cce78f8b55",
+      "properties": [
+        {
+          "name": "План",
+          "type": "text"
+        },
+        {
+          "name": "Предыдущий цикл",
+          "type": "relation",
+          "target": "focus",
+          "pairedProperty": "Следующий цикл"
+        },
+        {
+          "name": "Порядок фокуса",
+          "type": "text"
+        },
+        {
+          "name": "Следующий цикл",
+          "type": "relation",
+          "target": "focus",
+          "pairedProperty": "Предыдущий цикл"
+        },
+        {
+          "name": "Проекты",
+          "type": "relation",
+          "target": "projects",
+          "pairedProperty": "Циклы"
+        },
+        {
+          "name": "Цели",
+          "type": "relation",
+          "target": "goals",
+          "pairedProperty": "Циклы"
+        },
+        {
+          "name": "Уровень",
+          "type": "select",
+          "options": [
+            {
+              "name": "Год",
+              "color": "purple"
+            },
+            {
+              "name": "Квартал",
+              "color": "blue"
+            },
+            {
+              "name": "Месяц",
+              "color": "green"
+            },
+            {
+              "name": "Неделя",
+              "color": "yellow"
+            },
+            {
+              "name": "День",
+              "color": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Корректировка",
+          "type": "text"
+        },
+        {
+          "name": "Прогресс",
+          "type": "number",
+          "numberFormat": "percent"
+        },
+        {
+          "name": "Статус",
+          "type": "select",
+          "options": [
+            {
+              "name": "Planned",
+              "color": "gray"
+            },
+            {
+              "name": "Active",
+              "color": "blue"
+            },
+            {
+              "name": "Reviewing",
+              "color": "yellow"
+            },
+            {
+              "name": "Reviewed",
+              "color": "green"
+            }
+          ]
+        },
+        {
+          "name": "Оценка (ч)",
+          "type": "number"
+        },
+        {
+          "name": "Период",
+          "type": "date"
+        },
+        {
+          "name": "Задачи",
+          "type": "relation",
+          "target": "tasks",
+          "pairedProperty": "Цикл"
+        },
+        {
+          "name": "Итог",
+          "type": "text"
+        },
+        {
+          "name": "Факт (ч)",
+          "type": "number"
+        },
+        {
+          "name": "Цикл",
+          "type": "title"
+        }
+      ],
+      "views": [
+        {
+          "name": "Все",
+          "type": "table",
+          "visibleProperties": [
+            "Цикл",
+            "Уровень",
+            "Статус",
+            "Период",
+            "План",
+            "Итог",
+            "Задачи",
+            "Факт (ч)",
+            "Предыдущий цикл",
+            "Следующий цикл"
+          ],
+          "sorts": [
+            {
+              "property": "Период",
+              "direction": "descending"
+            }
+          ]
+        },
+        {
+          "name": "Дни",
+          "type": "table",
+          "visibleProperties": [
+            "Цикл",
+            "Статус",
+            "Период",
+            "План",
+            "Итог",
+            "Задачи",
+            "Факт (ч)"
+          ],
+          "sorts": [
+            {
+              "property": "Период",
+              "direction": "descending"
+            }
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "property": "Уровень",
+                "operator": "enum_is",
+                "value": {
+                  "type": "exact",
+                  "value": "День"
+                }
+              }
+            ]
+          },
+          "subitemFilterScope": "parents_and_subitems"
+        },
+        {
+          "name": "По уровню",
+          "type": "table",
+          "visibleProperties": [
+            "Цикл",
+            "Статус",
+            "Период",
+            "План",
+            "Итог",
+            "Задачи"
+          ],
+          "sorts": [
+            {
+              "property": "Период",
+              "direction": "descending"
+            }
+          ],
+          "groupBy": {
+            "property": "Уровень",
+            "propertyType": "select",
+            "hideEmptyGroups": true,
+            "sort": {
+              "type": "manual"
+            }
+          }
+        },
+        {
+          "name": "Обзор",
+          "type": "board",
+          "visibleProperties": [
+            "Цикл",
+            "Уровень",
+            "Период",
+            "План"
+          ],
+          "groupBy": {
+            "property": "Статус",
+            "propertyType": "select",
+            "hideEmptyGroups": true,
+            "sort": {
+              "type": "manual"
+            }
+          }
+        }
+      ],
+      "description": "Утро/вечер: карточка дня с планом, итогом и связанными задачами."
+    },
+    {
+      "slug": "ideas",
+      "title": "Идеи",
+      "icon": null,
+      "onHub": true,
+      "sourcePageAlive": true,
+      "sourcePageUrl": "https://www.notion.so/f250c24969804f8fa3e630da386a21fc",
+      "sourceDataSourceUrl": "collection://8890c0dd-95d9-4c93-a7ab-770205c7d846",
+      "properties": [
+        {
+          "name": "Следующий просмотр",
+          "type": "date"
+        },
+        {
+          "name": "Статус",
+          "type": "select",
+          "options": [
+            {
+              "name": "Новая",
+              "color": "yellow"
+            },
+            {
+              "name": "Смотрим",
+              "color": "blue"
+            },
+            {
+              "name": "Стала проектом",
+              "color": "green"
+            },
+            {
+              "name": "Отложена",
+              "color": "gray"
+            },
+            {
+              "name": "Стала задачей",
+              "color": "green"
+            }
+          ]
+        },
+        {
+          "name": "Суть",
+          "type": "text"
+        },
+        {
+          "name": "Задача",
+          "type": "relation",
+          "target": "tasks",
+          "oneWay": true
+        },
+        {
+          "name": "Идея",
+          "type": "title"
+        }
+      ],
+      "views": [
+        {
+          "name": "Default view",
+          "type": "table",
+          "visibleProperties": [
+            "Идея",
+            "Следующий просмотр",
+            "Статус",
+            "Задача",
+            "Суть"
+          ]
+        }
+      ],
+      "description": "Отдельное пространство, не проекты и не задачи. Сюда — то, что может стать проектом, и то, что смотрим на соответствие целям. Тот же смысл шире доски: методики поведения, развития, лайфстайл, work style. Идеи периодически пересматривать и напоминать, чтобы не застаивались."
+    },
+    {
+      "slug": "study",
+      "title": "Учёба",
+      "icon": "📚",
+      "onHub": true,
+      "sourcePageAlive": true,
+      "sourcePageUrl": "https://www.notion.so/146659467f854f928e88309a88868353",
+      "sourceDataSourceUrl": "collection://257c79a8-002c-4de4-b97f-ed4e216f0ea1",
+      "properties": [
+        {
+          "name": "Вид",
+          "type": "select",
+          "options": [
+            {
+              "name": "Факт",
+              "color": "blue"
+            },
+            {
+              "name": "План",
+              "color": "yellow"
+            }
+          ]
+        },
+        {
+          "name": "Срок",
+          "type": "date"
+        },
+        {
+          "name": "Начало",
+          "type": "date"
+        },
+        {
+          "name": "Тема",
+          "type": "title"
+        }
+      ],
+      "views": [
+        {
+          "name": "Default view",
+          "type": "table",
+          "visibleProperties": [
+            "Тема",
+            "Вид",
+            "Начало",
+            "Срок"
+          ]
+        },
+        {
+          "name": "Все",
+          "type": "table",
+          "visibleProperties": [
+            "Тема",
+            "Вид",
+            "Начало",
+            "Срок"
+          ],
+          "sorts": [
+            {
+              "property": "\\Uau",
+              "direction": "descending"
+            }
+          ]
+        },
+        {
+          "name": "По дням",
+          "type": "calendar",
+          "visibleProperties": [
+            "Тема",
+            "Срок"
+          ],
+          "calendarBy": "Срок"
+        },
+        {
+          "name": "Список",
+          "type": "list",
+          "visibleProperties": [
+            "Тема",
+            "Вид",
+            "Начало",
+            "Срок"
+          ]
+        },
+        {
+          "name": "Планы",
+          "type": "table",
+          "visibleProperties": [
+            "Тема",
+            "Вид",
+            "Начало"
+          ],
+          "sorts": [
+            {
+              "property": "Начало",
+              "direction": "ascending"
+            }
+          ],
+          "filter": {
+            "operator": "and",
+            "filters": [
+              {
+                "property": "Вид",
+                "operator": "enum_is",
+                "value": {
+                  "type": "exact",
+                  "value": "План"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "description": "Плоский список. Одна карточка — одна тема или одно упражнение. Свойство только «Тема». На карточке материалы и ссылки."
+    },
+    {
+      "slug": "metrics",
+      "title": "Метрики",
+      "icon": "📊",
+      "onHub": false,
+      "sourcePageAlive": false,
+      "sourcePageUrl": "https://www.notion.so/cbbaa4155914443cb563c0b4fc9bb311",
+      "sourceDataSourceUrl": "collection://968e2d8e-66ec-49a0-8030-ed2c5c164251",
+      "properties": [
+        {
+          "name": "Период",
+          "type": "date"
+        },
+        {
+          "name": "Цель",
+          "type": "number"
+        },
+        {
+          "name": "Единица",
+          "type": "text"
+        },
+        {
+          "name": "Факт",
+          "type": "number"
+        },
+        {
+          "name": "Заметки",
+          "type": "text"
+        },
+        {
+          "name": "Цели",
+          "type": "relation",
+          "target": "goals",
+          "pairedProperty": "Метрики"
+        },
+        {
+          "name": "Тип",
+          "type": "select",
+          "options": [
+            {
+              "name": "Опережающая",
+              "color": "blue"
+            },
+            {
+              "name": "Запаздывающая",
+              "color": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Проекты",
+          "type": "relation",
+          "target": "projects",
+          "pairedProperty": "Метрики"
+        },
+        {
+          "name": "Уровень",
+          "type": "select",
+          "options": [
+            {
+              "name": "Год",
+              "color": "purple"
+            },
+            {
+              "name": "Квартал",
+              "color": "blue"
+            },
+            {
+              "name": "Месяц",
+              "color": "green"
+            },
+            {
+              "name": "Неделя",
+              "color": "yellow"
+            },
+            {
+              "name": "День",
+              "color": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Метрика",
+          "type": "title"
+        }
+      ],
+      "views": [
+        {
+          "name": "Список",
+          "type": "table",
+          "visibleProperties": [
+            "Метрика",
+            "Уровень",
+            "Период",
+            "Единица",
+            "Цель",
+            "Факт",
+            "Заметки"
+          ]
+        },
+        {
+          "name": "По уровню",
+          "type": "table",
+          "visibleProperties": [
+            "Метрика",
+            "Тип",
+            "Цель",
+            "Факт",
+            "Единица",
+            "Цели"
+          ],
+          "groupBy": {
+            "property": "Уровень",
+            "propertyType": "select",
+            "hideEmptyGroups": false,
+            "sort": {
+              "type": "manual"
+            }
+          }
+        },
+        {
+          "name": "По целям",
+          "type": "table",
+          "visibleProperties": [
+            "Метрика",
+            "Уровень",
+            "Цель",
+            "Факт",
+            "Тип"
+          ],
+          "groupBy": {
+            "property": "Цели",
+            "propertyType": "relation",
+            "hideEmptyGroups": false,
+            "sort": {
+              "type": "manual"
+            }
+          }
+        }
+      ],
+      "placement": "Страница базы в исходном пространстве лежит в корзине и не висит на Home. Коллекция пустая. Связи Цели.Метрики и Проекты.Метрики указывают на неё."
+    }
+  ],
+  "rowCountsAtExport": {
+    "goals": 3,
+    "projects": 7,
+    "tasks": 54,
+    "ideas": 4,
+    "focus": 20,
+    "study": 6,
+    "metrics": 0
+  },
+  "notCopied": [
+    "Строки Целей, Проектов, Задач, Фокуса, Идей и Учёбы.",
+    "Тела страниц «Дерево: …».",
+    "Содержимое «Не проекты».",
+    "Страница «Служебное» и «Архив Гермеса»: служебный архив, не схема доски.",
+    "Пользователи в свойствах Владелец и Исполнитель."
+  ]
+}
